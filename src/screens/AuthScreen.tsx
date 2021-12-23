@@ -51,9 +51,9 @@ export function AuthScreen() {
                 spellCheck="false"
               />
               <FormHelperText>
-                Token must have access to the <code>dnd:write</code>,{" "}
-                <code>users.profile:read</code>, and{" "}
-                <code>users.profile:write</code> scopes
+                Token must have access to the following scopes{" "}
+                <code>dnd:read</code>,<code>dnd:write</code>,
+                <code>users.profile:read</code>,<code>users.profile:write</code>
               </FormHelperText>
             </FormControl>
             <Stack direction="row" justify="space-between" width="100%">

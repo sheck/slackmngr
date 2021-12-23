@@ -79,16 +79,24 @@ function Profile() {
   return (
     <HStack>
       {profile && (
-        <>
-          <Heading size="xl">
+        <Stack>
+          <Heading size="lg">
             {keywordToEmojiMaybe(profile.status_emoji)}{" "}
             {dnd?.snooze_enabled && "💤 "}
             {profile.status_text}
           </Heading>
           {dnd?.snooze_enabled && (
-            <Text>(ends {dayjs.unix(dnd.snooze_endtime).fromNow()})</Text>
+            <Text
+              fontSize="xs"
+              textTransform="uppercase"
+              letterSpacing="wider"
+              fontWeight="bold"
+              color="gray.500"
+            >
+              ends {dayjs.unix(dnd.snooze_endtime).fromNow()}
+            </Text>
           )}
-        </>
+        </Stack>
       )}
       <Spacer />
       <Button isLoading={isLoading} onClick={handleRefresh}>

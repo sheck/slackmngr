@@ -1,5 +1,7 @@
 import { useContext } from "react"
 import {
+  Alert,
+  AlertIcon,
   Button,
   Container,
   FormControl,
@@ -36,6 +38,10 @@ export function AuthScreen() {
         <Heading>Auth</Heading>
         <form onSubmit={handleSubmit}>
           <VStack align="start">
+            <Alert status="info">
+              <AlertIcon /> You should add this app to your home screen before
+              logging in
+            </Alert>
             <FormControl id="token" isRequired>
               <FormLabel>Slack API Token</FormLabel>
               <Input

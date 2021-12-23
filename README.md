@@ -1,6 +1,4 @@
 # SLACKMNGR
-### A PWA to manage your Slack away and do not disturb status on the go
+A PWA to manage your Slack away and do not disturb status on the go
 
----
-
-<img width="564" alt="v1-main" src="https://user-images.githubusercontent.com/3035506/147289395-1c132534-c296-4935-aa62-0352782d48a7.png">
+<img width="500" src="https://user-images.githubusercontent.com/3035506/147296685-11e2abac-9b77-4e3c-989d-5efb89949a42.png" alt="v1.0.1 main screen screenshot" />

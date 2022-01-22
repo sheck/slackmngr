@@ -119,7 +119,15 @@ function EditableRecipe({
     updateRecipe(setRecipes, index, { text: ev.target.value })
   const minutesChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
     const minutes = parseInt(ev.target.value)
-    !isNaN(minutes) && updateRecipe(setRecipes, index, { minutes })
+    if (!isNaN(minutes)) {
+      updateRecipe(setRecipes, index, { minutes })
+    } else if (ev.target.value === "") {
+      updateRecipe(setRecipes, index, { minutes: undefined })
+    }
+  }
+  const ensureMinutesIsNumber = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    const minutes = parseInt(ev.target.value)
+    if (isNaN(minutes)) updateRecipe(setRecipes, index, { minutes: 0 })
   }
   const dndChange = () => updateRecipe(setRecipes, index, { dnd: !recipe.dnd })
   return (
@@ -145,7 +153,13 @@ function EditableRecipe({
       </FormControl>
       <FormControl isRequired>
         <FormLabel>Number of minutes</FormLabel>
-        <Input value={recipe.minutes} type="number" onChange={minutesChange} />
+        <Input
+          value={recipe.minutes}
+          pattern="[0-9]*"
+          type="number"
+          onChange={minutesChange}
+          onBlur={ensureMinutesIsNumber}
+        />
       </FormControl>
       <FormControl>
         <Checkbox isChecked={recipe.dnd} onChange={dndChange}>

@@ -4,7 +4,7 @@ import "./index.css"
 import App from "./App"
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration"
 import reportWebVitals from "./reportWebVitals"
-import { ColorModeScript } from "@chakra-ui/react"
+import { createStandaloneToast, ColorModeScript } from "@chakra-ui/react"
 import { theme } from "./theme"
 
 ReactDOM.render(
@@ -24,6 +24,18 @@ serviceWorkerRegistration.register({
       registration.waiting.postMessage({ type: "SKIP_WAITING" })
     }
     window.location.reload()
+    const toast = createStandaloneToast()
+    toast({
+      title: "App updated to latest version",
+      description: (
+        <a href="https://github.com/sheck/slackmngr/blob/main/CHANGELOG.md#changelog">
+          View Changelog
+        </a>
+      ),
+      status: "success",
+      duration: 7000,
+      isClosable: true,
+    })
   },
 })
 

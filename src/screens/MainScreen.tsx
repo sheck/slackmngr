@@ -24,8 +24,8 @@ import { keywordToEmojiMaybe } from "../utils/emoji"
 export function MainScreen() {
   const { recipes } = useRecipes()
   return (
-    <Container height="100%">
-      <Stack height="100%">
+    <Container>
+      <Stack height="100vh">
         <Stack spacing={5}>
           <Heading
             marginY="1"
@@ -47,11 +47,7 @@ export function MainScreen() {
           </SimpleGrid>
         </Stack>
         <Box flexGrow={1}></Box>
-        <Box overflow="auto">
-          <Box sx={{ position: "sticky", bottom: "0" }}>
-            <Footer />
-          </Box>
-        </Box>
+        <Footer />
       </Stack>
     </Container>
   )

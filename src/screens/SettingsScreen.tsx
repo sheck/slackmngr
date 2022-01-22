@@ -8,6 +8,7 @@ import {
   Text,
   useToast,
   VStack,
+  HStack,
 } from "@chakra-ui/react"
 import { useAuth } from "../contexts"
 import {
@@ -28,14 +29,16 @@ export function SettingsScreen() {
   return (
     <Container>
       <VStack paddingTop={3} spacing={5}>
-        <Button
-          leftIcon={<ChevronLeftIcon />}
-          onClick={() => navigate(-1)}
-        >
+        <Button leftIcon={<ChevronLeftIcon />} onClick={() => navigate(-1)}>
           Back
         </Button>
         <Heading>Settings</Heading>
-        <Text>v{version}</Text>
+        <HStack>
+          <Text>v{version}</Text>
+          <Button size="xs" href="https://github.com/sheck/slackmngr/blob/main/CHANGELOG.md#changelog">
+            View Changelog
+          </Button>
+        </HStack>
         <Box>
           <Text>Slack Manager works best as a home screen app.</Text>
           <Text>For iOS: Share &gt; Add to Home Screen.</Text>
@@ -56,7 +59,7 @@ export function SettingsScreen() {
             </Button>
             <Divider />
             <RevealTokenButton {...{ token }} />
-            <Button leftIcon={<WarningTwoIcon />} onClick={() => setToken("")}>
+            <Button colorScheme="yellow" leftIcon={<WarningTwoIcon />} onClick={() => setToken("")}>
               Clear Slack Token
             </Button>
           </>

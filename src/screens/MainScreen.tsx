@@ -42,8 +42,11 @@ export function MainScreen() {
             {recipes.map((recipe) => (
               <StatusButton key={recipe.id} {...recipe} />
             ))}
+          </SimpleGrid>
+          <SimpleGrid minChildWidth="10em" spacing={5}>
             <ResetDNDButton />
             <ResetAllButton />
+            <Box />
           </SimpleGrid>
         </Stack>
         <Box flexGrow={1}></Box>

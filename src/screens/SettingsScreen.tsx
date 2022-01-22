@@ -9,6 +9,7 @@ import {
   useToast,
   VStack,
   HStack,
+  Link,
 } from "@chakra-ui/react"
 import { useAuth } from "../contexts"
 import {
@@ -35,9 +36,13 @@ export function SettingsScreen() {
         <Heading>Settings</Heading>
         <HStack>
           <Text>v{version}</Text>
-          <Button size="xs" href="https://github.com/sheck/slackmngr/blob/main/CHANGELOG.md#changelog">
+          <Link
+            href="https://github.com/sheck/slackmngr/blob/main/CHANGELOG.md#changelog"
+            color="teal"
+            isExternal
+          >
             View Changelog
-          </Button>
+          </Link>
         </HStack>
         <Box>
           <Text>Slack Manager works best as a home screen app.</Text>
@@ -59,7 +64,11 @@ export function SettingsScreen() {
             </Button>
             <Divider />
             <RevealTokenButton {...{ token }} />
-            <Button colorScheme="yellow" leftIcon={<WarningTwoIcon />} onClick={() => setToken("")}>
+            <Button
+              colorScheme="yellow"
+              leftIcon={<WarningTwoIcon />}
+              onClick={() => setToken("")}
+            >
               Clear Slack Token
             </Button>
           </>

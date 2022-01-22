@@ -38,7 +38,7 @@ export function MainScreen() {
           </Heading>
           <Profile />
           <Divider />
-          <SimpleGrid columns={[1, 2]} spacing={5}>
+          <SimpleGrid minChildWidth="10em" spacing={5}>
             {recipes.map((recipe) => (
               <StatusButton key={recipe.id} {...recipe} />
             ))}

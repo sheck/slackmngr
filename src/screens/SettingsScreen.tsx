@@ -15,6 +15,7 @@ import { useAuth } from "../contexts"
 import {
   ChevronLeftIcon,
   EditIcon,
+  ExternalLinkIcon,
   Search2Icon,
   ViewIcon,
   ViewOffIcon,
@@ -41,7 +42,7 @@ export function SettingsScreen() {
             color="teal"
             isExternal
           >
-            View Changelog
+            View Changelog <ExternalLinkIcon mx="2px" />
           </Link>
         </HStack>
         <Box>

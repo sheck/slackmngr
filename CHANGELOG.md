@@ -2,6 +2,9 @@
 
 ## [1.1.0] - January 22nd, 2022
 
+### Added
+- Link to view changelog on settings screen
+
 ### Changed
 - Fixed settings button disappearing when too many buttons are present
 - Changed layout to 2 buttons per row on some screen sizes

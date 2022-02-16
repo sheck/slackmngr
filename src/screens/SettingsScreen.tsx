@@ -22,7 +22,9 @@ import {
   WarningTwoIcon,
 } from "@chakra-ui/icons"
 import { useNavigate } from "react-router-dom"
-import { version } from "../../package.json"
+import packageJson from "../../package.json"
+
+const { version } = packageJson
 
 export function SettingsScreen() {
   const { hasAuth, token, setToken } = useAuth()

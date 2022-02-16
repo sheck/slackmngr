@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.1] - February 15th, 2022
+
+### Changed
+- Updated dependencies for security purposes
+
 ## [1.1.0] - January 22nd, 2022
 
 ### Added
@@ -20,6 +25,7 @@
 
 First public release!
 
+[1.1.1]: https://github.com/sheck/slackmngr/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/sheck/slackmngr/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/sheck/slackmngr/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/sheck/slackmngr/releases/tag/v1.0.0

@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom"
 import { useRecipes } from "../contexts"
 import { buildNewBlankRecipe, DEFAULT_RECIPES, Recipe } from "../recipes"
 import { keywordToEmojiStrict } from "../utils/emoji"
+import { RecipeImportButton } from "./RecipeImportButton"
 
 export function EditRecipeScreen() {
   const navigate = useNavigate()
@@ -56,7 +57,10 @@ export function EditRecipeScreen() {
         >
           Back
         </Button>
-        <Heading>Edit Recipes</Heading>
+        <HStack justify="space-between">
+          <Heading>Edit Recipes</Heading>
+          <RecipeImportButton onImport={setRecipes} />
+        </HStack>
         {recipes.map((recipe, index) => (
           <EditableRecipe
             {...{

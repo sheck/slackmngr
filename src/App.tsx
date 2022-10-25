@@ -81,31 +81,29 @@ export default function App() {
     )
 
   return (
-    <ChakraProvider theme={theme}>
-      <AuthContext.Provider value={{ token, setToken, hasAuth }}>
-        <RecipeContext.Provider value={{ recipes, setRecipes }}>
-          <SlackResourceContext.Provider
-            value={{ profile, setProfile, dnd, setDnd }}
-          >
-            <HashRouter>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <RequireAuth>
-                      <MainScreen />
-                    </RequireAuth>
-                  }
-                />
-                <Route path="/login" element={<AuthScreen />} />
-                <Route path="/settings" element={<SettingsScreen />} />
-                <Route path="/edit" element={<EditRecipeScreen />} />
-                <Route path="*" element={<NotFoundScreen />} />
-              </Routes>
-            </HashRouter>
-          </SlackResourceContext.Provider>
-        </RecipeContext.Provider>
-      </AuthContext.Provider>
-    </ChakraProvider>
+    <AuthContext.Provider value={{ token, setToken, hasAuth }}>
+      <RecipeContext.Provider value={{ recipes, setRecipes }}>
+        <SlackResourceContext.Provider
+          value={{ profile, setProfile, dnd, setDnd }}
+        >
+          <HashRouter>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <RequireAuth>
+                    <MainScreen />
+                  </RequireAuth>
+                }
+              />
+              <Route path="/login" element={<AuthScreen />} />
+              <Route path="/settings" element={<SettingsScreen />} />
+              <Route path="/edit" element={<EditRecipeScreen />} />
+              <Route path="*" element={<NotFoundScreen />} />
+            </Routes>
+          </HashRouter>
+        </SlackResourceContext.Provider>
+      </RecipeContext.Provider>
+    </AuthContext.Provider>
   )
 }

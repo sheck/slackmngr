@@ -21,6 +21,7 @@ export function ServiceWorkerWrapper() {
               Reload
             </Button>
           ),
+          duration: null,
           isClosable: true,
         })
       },

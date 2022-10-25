@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.3.0] - October 25th, 2022
+- Added ability to export and import recipes
+
 ## [1.2.0] - October 24th, 2022
 - Updated dependencies for security purposes
 - Added update available prompt (will be visible for future updates)

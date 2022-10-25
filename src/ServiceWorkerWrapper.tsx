@@ -25,6 +25,9 @@ export function ServiceWorkerWrapper() {
         })
       },
     })
+    // Don't care if toast changes, really don't want this hook to run more than
+    // once
+    /* eslint-disable */
   }, [])
 
   function updateApp(registration: ServiceWorkerRegistration) {

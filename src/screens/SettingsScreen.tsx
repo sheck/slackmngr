@@ -11,9 +11,10 @@ import {
   HStack,
   Link,
 } from "@chakra-ui/react"
-import { useAuth } from "../contexts"
+import { useAuth, useRecipes } from "../contexts"
 import {
   ChevronLeftIcon,
+  DownloadIcon,
   EditIcon,
   ExternalLinkIcon,
   Search2Icon,
@@ -23,12 +24,18 @@ import {
 } from "@chakra-ui/icons"
 import { useNavigate } from "react-router-dom"
 import packageJson from "../../package.json"
+import { useMagicJSONDownload } from "../hooks/useMagicDownload"
 
 const { version } = packageJson
 
 export function SettingsScreen() {
   const { hasAuth, token, setToken } = useAuth()
   const navigate = useNavigate()
+  const { recipes } = useRecipes()
+  const downloadRecipes = useMagicJSONDownload(
+    "slackmngr-recipes.json",
+    recipes
+  )
 
   return (
     <Container>
@@ -62,9 +69,19 @@ export function SettingsScreen() {
         {hasAuth && (
           <>
             <Divider />
-            <Button leftIcon={<EditIcon />} onClick={() => navigate("/edit")}>
-              Edit Recipes
-            </Button>
+            <HStack>
+              <Button leftIcon={<EditIcon />} onClick={() => navigate("/edit")}>
+                Edit Recipes
+              </Button>
+              <Button
+                onClick={downloadRecipes}
+                variant="outline"
+                leftIcon={<DownloadIcon />}
+                size="md"
+              >
+                Export Recipes
+              </Button>
+            </HStack>
             <Divider />
             <RevealTokenButton {...{ token }} />
             <Button

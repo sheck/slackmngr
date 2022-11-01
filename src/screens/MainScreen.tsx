@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { Fragment, useContext, useEffect, useState } from "react"
 import {
   Box,
   Button,
@@ -10,6 +10,7 @@ import {
   Spacer,
   Stack,
   Text,
+  useInterval,
   useToast,
 } from "@chakra-ui/react"
 import { RepeatIcon, SettingsIcon } from "@chakra-ui/icons"
@@ -92,7 +93,10 @@ function Profile() {
               fontWeight="bold"
               color="gray.500"
             >
-              ends {dayjs.unix(dnd.snooze_endtime).fromNow()}
+              ends{" "}
+              <LiveUpdating
+                getText={() => dayjs.unix(dnd.snooze_endtime).fromNow()}
+              />
             </Text>
           )}
         </Stack>
@@ -103,6 +107,14 @@ function Profile() {
       </Button>
     </HStack>
   )
+}
+
+function LiveUpdating({ getText }: { getText: () => string }) {
+  const [key, setKey] = useState(0)
+  useInterval(() => {
+    setKey(new Date().getTime())
+  }, 1000)
+  return <Fragment key={key}>{getText()}</Fragment>
 }
 
 function StatusButton({ emoji_name, name, minutes, text, dnd }: Recipe) {

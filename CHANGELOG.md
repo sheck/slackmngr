@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.4.1] - November 8th, 2022
+- Security update
+
 ## [1.4.0] - November 1st, 2022
 - DND countdown now live updates (you'll still need to press refresh to clear it
   the status from view)
@@ -36,6 +39,7 @@
 
 First public release!
 
+[1.4.1]: https://github.com/sheck/slackmngr/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/sheck/slackmngr/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/sheck/slackmngr/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/sheck/slackmngr/compare/v1.1.1...v1.2.0

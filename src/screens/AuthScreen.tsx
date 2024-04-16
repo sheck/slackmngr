@@ -28,6 +28,8 @@ export function AuthScreen() {
   }
 
   if (hasAuth) {
+    // @ts-expect-error typing is all weird after upgrading yarn packages. State
+    // is a user defined object.
     const from = location.state?.from?.pathname || "/"
     return <Navigate to={from} replace={true} />
   }

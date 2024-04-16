@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@chakra-ui/icons": "^1.0.13",
     "@chakra-ui/react": "^1.6.2",
     "@emotion/react": "^11",
@@ -65,7 +66,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "prettier": "2.3.0"
   }
 }
